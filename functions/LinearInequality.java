@@ -22,6 +22,12 @@ public class LinearInequality implements SmoothFunction{
 		// Precalculate hessian
 		this.hessian = DoubleMatrix.zeros(A.getColumns(),A.getColumns()); 
 	}
+	/**
+	 * Overloaded constructor for arrays A and b
+	 */
+	public LinearInequality(double[][] A, double[] b){
+		this(new DoubleMatrix(A), new DoubleMatrix(b));
+	}
 	@Override
 	public DoubleMatrix evaluate(DoubleMatrix x) {
 		// TODO Auto-generated method stub
